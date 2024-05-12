@@ -20,7 +20,7 @@ const Register = () => {
     const { name, email, password } = userData;
     try {
       const res = await axios.post(
-        "http://localhost:3030/api/v1/user/register",
+        "https://backend-9bg9.onrender.com/api/v1/user/register",
         { name, email, password }
       );
       if (res.data.success) {

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPriceFilter, setProductCategory } from "../utils/productSlice";
-import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -66,7 +65,7 @@ const Sidebar = () => {
         <div className="flex-grow overflow-y-auto">
           {user?.user?.name === "Admin" ? (
             <ul className="p-2">
-              <li className="p-2 hover:bg-gray-700">Add New Product for user<br/> To watch Dashboard go <br/> http://localhost:3000/user-dashboard </li>
+              <li className="p-2 hover:bg-gray-700">Add New Product for user </li>
             </ul>
           ) : (
             <>

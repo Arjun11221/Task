@@ -13,7 +13,7 @@ const ProductDetails = () => {
   const getProduct = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:3030/api/v1/product/data/allProductDetails"
+        "https://backend-9bg9.onrender.com/api/v1/product/data/allProductDetails"
       );
       if (res.data.success) {
         toast.success(res.data.message);
@@ -59,6 +59,8 @@ const ProductDetails = () => {
       dispatch(setPriceFilter({ min, max }));
     }
   };
+
+  console.log(handlePriceFilterChange);
 
   return (
     <div className="container mx-auto px-4 py-8">

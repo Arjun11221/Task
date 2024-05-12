@@ -9,6 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((store) => store.user);
+  console.log(user);
 
   const [userData, setUserData] = useState({
     email: "",
@@ -25,7 +26,7 @@ const Login = () => {
 
     const { email, password } = userData;
     try {
-      const res = await axios.post("http://localhost:3030/api/v1/user/login", {
+      const res = await axios.post("https://backend-9bg9.onrender.com/api/v1/user/login", {
         email,
         password,
       });

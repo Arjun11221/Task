@@ -24,7 +24,7 @@ const ProductForm = () => {
       productDetails;
     try {
       const res = await axios.post(
-        "http://localhost:3030/api/v1/product/data/product",
+        "https://backend-9bg9.onrender.com/api/v1/product/data/product",
         { productName, productSize, description, price, category, date }
       );
       if (res.data.success) {

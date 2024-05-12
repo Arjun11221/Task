@@ -1,8 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import axios from "axios";
-import { useDispatch, useSelector } from "react-redux";
-import { getData } from "../utils/userSlice";
+import { useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 
 const PublicRoute = ({ children }) => {
@@ -12,7 +12,7 @@ const PublicRoute = ({ children }) => {
   const getUser = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3030/api/v1/user/getUserData",
+        "https://backend-9bg9.onrender.com/api/v1/user/getUserData",
         {
           token: localStorage.getItem("token"),
         },
