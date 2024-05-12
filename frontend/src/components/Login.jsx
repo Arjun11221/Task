@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getData } from "../utils/userSlice";
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user } = useSelector((store) => store.user);
 
   const [userData, setUserData] = useState({
     email: "",
@@ -25,11 +29,21 @@ const Login = () => {
         email,
         password,
       });
+      console.log(res);
+
       if (res.data.success) {
         toast.success(res.data.message);
-        navigate("/admin");
+        dispatch(getData(res.data.user));
+        // dispatch(getData(res.data.data));
+        if(res?.data?.data?.name === "Admin"){
+          console.log(res.data.data.name);
+          navigate('/admin') 
+        }
+        else{
+          navigate('/user-dashboard')
+        }
         localStorage.setItem("token", res.data.token);
-        window.location.reload();
+        // window.location.reload();
       } else {
         toast.error(res.data.message);
       }

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import toast from "react-hot-toast";
 
 const ProductForm = () => {
+
   const [productDetails, setProductDetails] = useState({
     productName: "",
     description: "",
@@ -149,7 +150,10 @@ const ProductForm = () => {
           />
         </div>
         <div>
-          <button type="submit" className="bg-slate-600 text-white py-2 px-4 rounded-md">
+          <button
+            type="submit"
+            className="bg-slate-600 text-white py-2 px-4 rounded-md"
+          >
             Submit
           </button>
         </div>

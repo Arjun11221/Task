@@ -6,7 +6,7 @@ import { getData } from "../utils/userSlice";
 import { toast } from "react-hot-toast";
 
 const PublicRoute = ({ children }) => {
-  const dispatch = useDispatch();
+  
   const { user } = useSelector((store) => store.user);
 
   const getUser = async () => {
@@ -23,7 +23,7 @@ const PublicRoute = ({ children }) => {
         }
       );
       if (res.data.success) {
-        dispatch(getData(res.data.data));
+        
         toast.success(res.data.message);
       } else {
         <Navigate to={"/login"} />;
