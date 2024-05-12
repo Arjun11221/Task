@@ -13,31 +13,10 @@ function App() {
     <BrowserRouter>
       <Toaster position="top-center" toastOptions={{ duration: 3000 }} />
       <Routes>
-        <Route
-          path="/"
-          element={
-           
-              <Register />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-              <Login />
-          }
-        />
-        <Route
-          path="/admin"
-          element={
-              <Admin />
-          }
-        />
-        <Route
-          path="/user-dashboard"
-          element={
-              <UserDashboard />
-          }
-        />
+        <Route path="/" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/user-dashboard" element={<UserDashboard />} />
       </Routes>
     </BrowserRouter>
   );
