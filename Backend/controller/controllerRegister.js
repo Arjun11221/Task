@@ -13,6 +13,7 @@ const controllerRegister = async (req, res) => {
     }
 
     const existUser = await userModel.findOne({email});
+    
     if(existUser){
       return res.status(200).json({
         success:false,
